@@ -22,12 +22,10 @@ public class SampleTest {
     @Resource
     private CountryMapper countryMapper;
 
-    @Resource
-    SelectAllMapper selectAllMapper;
-
     @Test
     public void testSelect() {
          //利用mybatis-plus来简化增删改查
+        //打开@org.mybatis.spring.annotation.MapperScan("com.example.gpspringboot.mybatisplus.mapper")注解
 //        System.out.println(("----- selectAll userMapper test  Start------"));
 //        List<User> userList = userMapper.selectList(null);
 //        Assert.assertEquals(5, userList.size());
@@ -43,10 +41,5 @@ public class SampleTest {
         //使用纯接口注解方式时
         Country country = countryMapper.selectByCountryName("北京");
         System.out.println(country);
-
-        List list = selectAllMapper.selectAll();
-        list.stream().forEach(System.out::println);
-
-
     }
 }
