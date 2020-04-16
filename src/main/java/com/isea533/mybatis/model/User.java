@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Table(name = "user")
 public class User {
     /**
-     * Ö÷¼üID
+     * ä¸»é”®ID
      */
     @Id
 //    @GeneratedValue(generator = "JDBC")
@@ -13,87 +13,87 @@ public class User {
     private Long id;
 
     /**
-     * ĞÕÃû
+     * å§“å
      */
     private String name;
 
     /**
-     * ÄêÁä
+     * å¹´é¾„
      */
     private Integer age;
 
     /**
-     * ÓÊÏä
+     * é‚®ç®±
      */
     private String email;
 
     /**
-     * »ñÈ¡Ö÷¼üID
+     * è·å–ä¸»é”®ID
      *
-     * @return id - Ö÷¼üID
+     * @return id - ä¸»é”®ID
      */
     public Long getId() {
         return id;
     }
 
     /**
-     * ÉèÖÃÖ÷¼üID
+     * è®¾ç½®ä¸»é”®ID
      *
-     * @param id Ö÷¼üID
+     * @param id ä¸»é”®ID
      */
     public void setId(Long id) {
         this.id = id;
     }
 
     /**
-     * »ñÈ¡ĞÕÃû
+     * è·å–å§“å
      *
-     * @return name - ĞÕÃû
+     * @return name - å§“å
      */
     public String getName() {
         return name;
     }
 
     /**
-     * ÉèÖÃĞÕÃû
+     * è®¾ç½®å§“å
      *
-     * @param name ĞÕÃû
+     * @param name å§“å
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * »ñÈ¡ÄêÁä
+     * è·å–å¹´é¾„
      *
-     * @return age - ÄêÁä
+     * @return age - å¹´é¾„
      */
     public Integer getAge() {
         return age;
     }
 
     /**
-     * ÉèÖÃÄêÁä
+     * è®¾ç½®å¹´é¾„
      *
-     * @param age ÄêÁä
+     * @param age å¹´é¾„
      */
     public void setAge(Integer age) {
         this.age = age;
     }
 
     /**
-     * »ñÈ¡ÓÊÏä
+     * è·å–é‚®ç®±
      *
-     * @return email - ÓÊÏä
+     * @return email - é‚®ç®±
      */
     public String getEmail() {
         return email;
     }
 
     /**
-     * ÉèÖÃÓÊÏä
+     * è®¾ç½®é‚®ç®±
      *
-     * @param email ÓÊÏä
+     * @param email é‚®ç®±
      */
     public void setEmail(String email) {
         this.email = email;

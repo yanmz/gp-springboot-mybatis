@@ -44,7 +44,7 @@
 			<optional>true</optional>
 		</dependency>
 
-		<!--通用Mapper 集成spring boot-->
+		<!--通用Mapper-->
 		<dependency>
 			<groupId>tk.mybatis</groupId>
 			<artifactId>mapper-spring-boot-starter</artifactId>
@@ -72,6 +72,24 @@
 			<artifactId>spring-test</artifactId>
 		</dependency>
 
+
+		<dependency>
+			<groupId>org.mybatis.generator</groupId>
+			<artifactId>mybatis-generator-core</artifactId>
+			<version>1.3.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>tk.mybatis</groupId>
+			<artifactId>mapper</artifactId>
+			<version>4.1.5</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>2.3.23</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -88,13 +106,14 @@
 					<target>${jdk.version}</target>
 				</configuration>
 			</plugin>
+			<!--逆向工程-->
 			<plugin>
 				<groupId>org.mybatis.generator</groupId>
 				<artifactId>mybatis-generator-maven-plugin</artifactId>
 				<version>1.3.6</version>
 				<configuration>
 					<configurationFile>
-						${basedir}/src/main/resources/generator/generatorConfig.xml
+						src/main/resources/generator/generatorConfig.xml
 					</configurationFile>
 					<overwrite>true</overwrite>
 					<verbose>true</verbose>
@@ -106,14 +125,24 @@
 						<version>5.1.29</version>
 					</dependency>
 					<dependency>
+						<groupId>org.mybatis.generator</groupId>
+						<artifactId>mybatis-generator-core</artifactId>
+						<version>1.3.6</version>
+					</dependency>
+					<dependency>
 						<groupId>tk.mybatis</groupId>
-						<artifactId>mapper</artifactId>
-						<version>4.0.0</version>
+						<artifactId>mapper-spring-boot-starter</artifactId>
+						<version>2.1.5</version>
 					</dependency>
 					<dependency>
 						<groupId>org.freemarker</groupId>
 						<artifactId>freemarker</artifactId>
 						<version>2.3.23</version>
+					</dependency>
+					<dependency>
+						<groupId>tk.mybatis</groupId>
+						<artifactId>mapper</artifactId>
+						<version>4.1.5</version>
 					</dependency>
 				</dependencies>
 			</plugin>
