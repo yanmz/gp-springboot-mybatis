@@ -42,7 +42,11 @@
 <!--        <property name="forceBigDecimals" value="false" />-->
 <!--    </javaTypeResolver>-->
 
-    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+<!-- 踩坑记录
+1.假如想要生成XXXExample类，想要将配置成targetRuntime="MyBatis3",不能将其配置成MyBatis3Simple
+-->
+
+    <context id="Mysql" targetRuntime="MyBatis3" defaultModelType="flat">
         <property name="beginningDelimiter" value="`"/>
         <property name="endingDelimiter" value="`"/>
 
@@ -63,7 +67,7 @@
             <!--模板路径-->
             <property name="templatePath" value="generator/test-one.ftl"/>
             <property name="mapperSuffix" value="Dao"/>
-            <property name="fileName" value="User${mapperSuffix}.java"/>
+            <property name="fileName" value="User${mapperSuffix}.txt"/>
         </plugin>
 
         <jdbcConnection driverClass="${jdbc.driverClass}"

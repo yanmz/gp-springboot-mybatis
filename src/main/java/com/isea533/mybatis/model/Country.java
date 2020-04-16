@@ -8,8 +8,6 @@ public class Country {
      * 主键
      */
     @Id
-//    @GeneratedValue(generator = "JDBC")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     /**

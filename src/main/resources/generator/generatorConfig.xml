@@ -63,7 +63,7 @@
             <!--模板路径-->
             <property name="templatePath" value="generator/test-one.ftl"/>
             <property name="mapperSuffix" value="Dao"/>
-            <property name="fileName" value="User${mapperSuffix}.java"/>
+            <property name="fileName" value="User${mapperSuffix}.txt"/>
         </plugin>
 
         <jdbcConnection driverClass="${jdbc.driverClass}"
@@ -79,7 +79,7 @@
         <javaClientGenerator targetPackage="com.isea533.mybatis.mapper" targetProject="src/main/java" type="XMLMAPPER"/>
 
         <!-- 指定数据库表 -->
-        <table tableName="department" domainObjectName="Department">
+        <table tableName="department" domainObjectName="Department" >
 <!--            <generatedKey column="id" sqlStatement="JDBC"/>-->
         </table>
     </context>
