@@ -8,7 +8,8 @@ public class User {
      * Ö÷¼üID
      */
     @Id
-    @GeneratedValue(generator = "JDBC")
+//    @GeneratedValue(generator = "JDBC")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     /**
