@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xmlns:p="http://www.springframework.org/schema/p"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+<!--以下配置AOP 注解 方式实现切面-->
+    <!-- 声明spring对@AspectJ的支持 -->
+    <aop:aspectj-autoproxy/>
+
+    <!-- 声明一个业务类 -->
+    <bean id="userManager" class="com.spring.service.impl.UserManagerServiceImpl">
+        <property name="name" value="lixiaoxi"></property>
+    </bean>
+    <!-- 声明通知类 -->
+    <bean id="aspectBean" class="com.spring.service.aop.AopAspect" />
+
+
+
+<!--    以下配置AOP xml方式实现切面-->
+    <!-- 声明一个业务类 -->
+<!--    <bean id="userManager" class="com.spring.service.impl.UserManagerServiceImpl">-->
+<!--        <property name="name" value="lixiaoxi"></property>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash; 声明通知类 &ndash;&gt;-->
+<!--    <bean id="aspectBean" class="com.spring.service.aop.AopAspect" />-->
+
+<!--    <aop:config>-->
+<!--        <aop:aspect ref="aspectBean">-->
+<!--            <aop:pointcut id="pointcut" expression="execution(* com.spring.service.impl.UserManagerServiceImpl..*(..))"/>-->
+
+<!--            &lt;!&ndash;前置通知：目标方法调用之前执行的代码 &ndash;&gt;-->
+<!--            <aop:before method="doBefore" pointcut-ref="pointcut"/>-->
+<!--            &lt;!&ndash;后置返回通知：目标方法正常结束后执行的代码-->
+<!--                 返回通知是可以访问到目标方法的返回值的&ndash;&gt;-->
+<!--            <aop:after-returning method="doAfterReturning" pointcut-ref="pointcut" returning="result"/>-->
+<!--            &lt;!&ndash;最终通知：目标方法调用之后执行的代码（无论目标方法是否出现异常均执行）-->
+<!--                因为方法可能会出现异常，所以不能返回方法的返回值&ndash;&gt;-->
+<!--            <aop:after method="doAfter" pointcut-ref="pointcut" />-->
+<!--            &lt;!&ndash;环绕通知&ndash;&gt;-->
+<!--            <aop:around method="doAround" pointcut-ref="pointcut"/>-->
+<!--            &lt;!&ndash;异常通知：目标方法抛出异常时执行的代码&ndash;&gt;-->
+<!--            <aop:after-throwing method="doAfterThrowing" pointcut-ref="pointcut" throwing="ex"/>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
+</beans>

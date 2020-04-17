@@ -71,6 +71,22 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>5.2.2.RELEASE</version>
+		</dependency>
+
+		<!--引入日志切面aspect类-->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<version>5.2.5.RELEASE</version>
+		</dependency>
 
 
 		<dependency>
@@ -84,12 +100,20 @@
 			<artifactId>mapper</artifactId>
 			<version>4.1.5</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.freemarker</groupId>
 			<artifactId>freemarker</artifactId>
 			<version>2.3.23</version>
 		</dependency>
+
+		<!-- hutool 工具类 -->
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-all</artifactId>
+			<version>5.2.5</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
