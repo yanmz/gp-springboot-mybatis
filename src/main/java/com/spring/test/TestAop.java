@@ -4,7 +4,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.spring.service.IUserManagerService;
-
 public class TestAop {
 
     public static void main(String[] args) throws Exception{

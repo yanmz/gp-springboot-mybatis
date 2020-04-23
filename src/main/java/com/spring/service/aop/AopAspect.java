@@ -4,14 +4,14 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 
+import java.util.Arrays;
+
 /**
  * 切面类：
  */
 
 @Aspect
 public class AopAspect {
-
-
 
     /**
      * 必须为final String类型的,注解里要使用的变量只能是静态常量类型的
@@ -25,6 +25,7 @@ public class AopAspect {
      */
     @Before(EDP)
     public void doBefore(JoinPoint jp){
+        System.out.println("方法执行前，打印入参：" + Arrays.toString(jp.getArgs()));
         System.out.println("===========执行前置通知============");
     }
 
