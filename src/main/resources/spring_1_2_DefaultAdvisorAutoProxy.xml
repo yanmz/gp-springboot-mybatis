@@ -23,8 +23,8 @@
         <property name="pattern" value="com.spring.service.*.query.*" />
     </bean>
 
-
-    <!--定义DefaultAdvisorAutoProxyCreator-->
+    <!--定义DefaultAdvisorAutoProxyCreator -->
+<!--   DefaultAdvisorAutoProxyCreator 是让 ioc 容器中的所有 advisor 来匹配方法，advisor 内部都是有 advice 的，让它们内部的 advice 来执行拦截处理-->
     <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" />
 
 </beans>

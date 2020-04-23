@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- *实现自动代理
+ *实现自动代理，完全不需要关心代理
  * @author admin
  */
 public class AopTest3 {
