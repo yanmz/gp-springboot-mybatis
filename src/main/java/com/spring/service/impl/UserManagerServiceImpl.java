@@ -6,6 +6,7 @@ import com.spring.service.IUserManagerService;
  * 业务实现类
  */
 public class UserManagerServiceImpl implements IUserManagerService {
+
     private String name;
 
     public String getName() {

@@ -8,17 +8,22 @@ import java.util.Arrays;
 
 /**
  * 切面类：
+ * @author Tom
  */
-
 @Aspect
-public class AopAspect {
+public class AopAspectAnnotation {
 
+    /**
+     * 必须为final String类型的,注解里要使用的变量只能是静态常量类型的
+     */
+    public static final String EDP="execution(* com.spring.service.impl.UserManagerServiceImpl..*(..))";
 
 
     /**
      * 前置通知：目标方法调用之前执行的代码
      * @param jp
      */
+    @Before(EDP)
     public void doBefore(JoinPoint jp){
         System.out.println("方法执行前，打印入参：" + Arrays.toString(jp.getArgs()));
         System.out.println("===========执行前置通知============");
@@ -30,6 +35,7 @@ public class AopAspect {
      * @param jp
      * @param result
      */
+    @AfterReturning(value=EDP,returning="result")
     public void doAfterReturning(JoinPoint jp,String result){
         System.out.println("===========执行后置通知============");
         System.out.println("返回值result==================="+result);
@@ -40,6 +46,7 @@ public class AopAspect {
      * 因为方法可能会出现异常，所以不能返回方法的返回值
      * @param jp
      */
+    @After(value =EDP)
     public void doAfter(JoinPoint jp){
         System.out.println("===========执行最终通知============");
     }
@@ -51,6 +58,7 @@ public class AopAspect {
      * @param jp
      * @param ex
      */
+    @AfterThrowing(value=EDP,throwing="ex")
     public void doAfterThrowing(JoinPoint jp,Exception ex){
         System.out.println("===========执行异常通知============");
     }
@@ -66,6 +74,7 @@ public class AopAspect {
      * @return
      * @throws Throwable
      */
+    @Around(EDP)
     public Object doAround(ProceedingJoinPoint pjp) throws Throwable{
         System.out.println("======执行环绕通知开始=========");
         // 调用方法的参数

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-2.5.xsd">
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <!-- 配置连接池 -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <!-- 注入属性值 -->
+        <property name="driverClassName" value="${driverClassName}"></property>
+        <property name="url" value="${url}"></property>
+        <property name="username" value="${username}"></property>
+        <property name="password" value="${password}"></property>
+    </bean>
+
+    <!-- JDBC模板对象 -->
+<!--    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">-->
+<!--        <property name="dataSource" ref="dataSource"></property>-->
+<!--    </bean>-->
+    <!-- 编程式事务管理 -->
+    <!-- 配置事务管理器 -->
+<!--    <bean id="dataSourceTransactionManager"  class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
+<!--        &lt;!&ndash; 注入dataSource &ndash;&gt;-->
+<!--        <property name="dataSource" ref="dataSource"></property>-->
+<!--    </bean>-->
+<!--    &lt;!&ndash;配置事务管理器模板 &ndash;&gt;-->
+<!--    <bean id="transactionTemplate"  class="org.springframework.transaction.support.TransactionTemplate">-->
+<!--        &lt;!&ndash; 注入真正进行事务管理的事务管理器,name必须为 transactionManager否则无法注入 &ndash;&gt;-->
+<!--        <property name="transactionManager" ref="dataSourceTransactionManager"></property>-->
+<!--    </bean>-->
+    <context:component-scan base-package="com.example.gpspringboot"/>
+</beans>

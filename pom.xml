@@ -84,6 +84,12 @@
 			<version>5.2.5.RELEASE</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>5.2.6.RELEASE</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.mybatis.generator</groupId>
